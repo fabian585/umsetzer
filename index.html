@@ -1,0 +1,1496 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Animations-Vorlagen – Max Testimonial | UMSETZER</title>
+<style>
+  /* ========== BRAND CI: UMSETZER ========== */
+  :root {
+    --gold: #FFD13E;
+    --gold-dark: #D4A800;
+    --black: #131313;
+    --dark: #1A1A1A;
+    --dark-card: #1E1E1E;
+    --gray: #888888;
+    --light-gray: #CCCCCC;
+    --white: #FFFFFF;
+    --red: #E74C3C;
+    --green: #2ECC71;
+    --red-muted: #C0392B;
+    --green-muted: #27AE60;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+  }
+
+  /* ========== HEADER ========== */
+  .page-header {
+    background: var(--dark);
+    border-bottom: 3px solid var(--gold);
+    padding: 32px 48px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .page-header h1 {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 4px;
+  }
+  .page-header p {
+    font-size: 14px;
+    color: var(--gray);
+  }
+
+  /* ========== LAYOUT ========== */
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 48px 24px 120px;
+  }
+
+  /* ========== SECTION INTRO ========== */
+  .intro {
+    text-align: center;
+    margin-bottom: 64px;
+    padding: 0 24px;
+  }
+  .intro h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+  .intro p {
+    font-size: 16px;
+    color: var(--gray);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+  .intro .hint {
+    display: inline-block;
+    margin-top: 20px;
+    background: var(--dark-card);
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 13px;
+    color: var(--gold);
+  }
+
+  /* ========== ANIMATION CARD ========== */
+  .anim-card {
+    background: var(--dark-card);
+    border: 1px solid #2A2A2A;
+    border-radius: 16px;
+    margin-bottom: 48px;
+    overflow: hidden;
+  }
+
+  .anim-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px 28px;
+    border-bottom: 1px solid #2A2A2A;
+    background: var(--dark);
+  }
+  .anim-number {
+    background: var(--gold);
+    color: var(--black);
+    font-weight: 800;
+    font-size: 14px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .anim-title-block { flex: 1; }
+  .anim-title-block h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--white);
+  }
+  .anim-title-block .tc {
+    font-size: 13px;
+    color: var(--gold);
+    font-weight: 600;
+    font-family: 'Courier New', monospace;
+  }
+
+  /* Preview area */
+  .anim-preview {
+    position: relative;
+    background: #0D0D0D;
+    min-height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .anim-preview .play-hint {
+    position: absolute;
+    bottom: 12px;
+    right: 16px;
+    font-size: 11px;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  /* Briefing text */
+  .anim-briefing {
+    padding: 20px 28px;
+    border-top: 1px solid #2A2A2A;
+  }
+  .anim-briefing .quote {
+    font-style: italic;
+    color: var(--gray);
+    font-size: 14px;
+    border-left: 3px solid var(--gold);
+    padding-left: 14px;
+    margin-bottom: 14px;
+    line-height: 1.6;
+  }
+  .anim-briefing .brief-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--gold);
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .anim-briefing .brief-text {
+    font-size: 14px;
+    color: var(--light-gray);
+    line-height: 1.7;
+  }
+  .anim-briefing .specs {
+    margin-top: 12px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .anim-briefing .spec {
+    font-size: 12px;
+    color: var(--gray);
+    background: #111;
+    padding: 4px 10px;
+    border-radius: 4px;
+  }
+  .anim-briefing .spec strong { color: var(--light-gray); }
+
+  /* ========== ANIMATION: #1 Bauchbinde ========== */
+  .lower-third-scene {
+    width: 100%;
+    height: 320px;
+    position: relative;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .person-placeholder {
+    width: 140px;
+    height: 180px;
+    background: #333;
+    border-radius: 70px 70px 20px 20px;
+    position: relative;
+    opacity: 0.4;
+  }
+  .person-placeholder::before {
+    content: '';
+    width: 70px; height: 70px;
+    background: #444;
+    border-radius: 50%;
+    position: absolute;
+    top: -40px; left: 50%;
+    transform: translateX(-50%);
+  }
+  .lower-third-bar {
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    display: flex;
+    align-items: stretch;
+    transform: translateX(-110%);
+    animation: slideInLT 0.8s ease-out 1s forwards;
+  }
+  .lt-gold {
+    background: var(--gold);
+    padding: 12px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .lt-gold .lt-name {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--black);
+    white-space: nowrap;
+  }
+  .lt-black {
+    background: var(--black);
+    border: 1px solid var(--gold);
+    border-left: none;
+    padding: 12px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .lt-black .lt-role {
+    font-size: 13px;
+    color: var(--white);
+    white-space: nowrap;
+  }
+  .lt-black .lt-company {
+    font-size: 11px;
+    color: var(--gold);
+    white-space: nowrap;
+  }
+  @keyframes slideInLT {
+    to { transform: translateX(0); }
+  }
+
+  /* ========== ANIMATION: #3 Zeitleiste ========== */
+  .timeline-scene {
+    width: 100%;
+    height: 320px;
+    position: relative;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 40px;
+  }
+  .tl-label-row {
+    width: 80%;
+    max-width: 600px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    font-weight: 700;
+    opacity: 0;
+    animation: fadeIn 0.5s ease 0.3s forwards;
+  }
+  .tl-label-row .start { color: var(--light-gray); }
+  .tl-label-row .end { color: var(--red); }
+  .timeline-track {
+    width: 80%;
+    max-width: 600px;
+    height: 28px;
+    background: #222;
+    border-radius: 14px;
+    position: relative;
+    overflow: hidden;
+  }
+  .timeline-fill {
+    height: 100%;
+    border-radius: 14px;
+    width: 0%;
+    animation: fillTimeline 2.5s ease-in-out 0.8s forwards;
+  }
+  @keyframes fillTimeline {
+    0%   { width: 0%;  background: linear-gradient(90deg, var(--gold) 0%, var(--gold) 100%); }
+    40%  { background: linear-gradient(90deg, var(--gold) 0%, #E8A317 100%); }
+    100% { width: 100%; background: linear-gradient(90deg, var(--gold) 0%, var(--red) 100%); }
+  }
+  .tl-hours {
+    font-size: 42px;
+    font-weight: 800;
+    color: var(--red);
+    opacity: 0;
+    animation: fadeIn 0.5s ease 3.2s forwards;
+  }
+  .tl-hours span { font-size: 18px; color: var(--gray); font-weight: 400; }
+  .tl-sub {
+    font-size: 14px;
+    color: var(--gray);
+    opacity: 0;
+    animation: fadeIn 0.5s ease 3.5s forwards;
+  }
+
+  /* ========== ANIMATION: #5 Vorher/Nachher ========== */
+  .bars-scene {
+    width: 100%;
+    height: 320px;
+    background: var(--black);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 64px;
+    padding: 40px 40px 60px;
+    position: relative;
+  }
+  .bar-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .bar-group .bar-label {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 0;
+    animation: fadeIn 0.5s ease 0.5s forwards;
+  }
+  .bar-wrapper {
+    width: 100px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+  }
+  .bar {
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+    position: relative;
+  }
+  .bar .bar-value {
+    position: absolute;
+    top: -28px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 13px;
+    font-weight: 700;
+    white-space: nowrap;
+    opacity: 0;
+    animation: fadeIn 0.3s ease 2.5s forwards;
+  }
+  /* Vorher */
+  .bar-vorher .hours-bar {
+    background: #555;
+    height: 0;
+    animation: growBar 1s ease-out 0.8s forwards;
+    --target-height: 160px;
+  }
+  .bar-vorher .output-bar {
+    background: var(--red-muted);
+    height: 0;
+    animation: growBar 1s ease-out 1.2s forwards;
+    --target-height: 90px;
+    margin-top: 8px;
+  }
+  /* Nachher */
+  .bar-nachher .hours-bar {
+    background: var(--gold-dark);
+    height: 0;
+    animation: growBar 1s ease-out 1.6s forwards;
+    --target-height: 80px;
+  }
+  .bar-nachher .output-bar {
+    background: var(--gold);
+    height: 0;
+    animation: growBar 1s ease-out 2s forwards;
+    --target-height: 140px;
+    margin-top: 8px;
+  }
+  @keyframes growBar {
+    to { height: var(--target-height); }
+  }
+  .bars-legend {
+    position: absolute;
+    bottom: 16px;
+    display: flex;
+    gap: 24px;
+    opacity: 0;
+    animation: fadeIn 0.5s ease 2.8s forwards;
+  }
+  .bars-legend span {
+    font-size: 11px;
+    color: var(--gray);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .bars-legend .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+  }
+
+  /* ========== ANIMATION: #7 State Management ========== */
+  .state-scene {
+    width: 100%;
+    height: 320px;
+    background: var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+  }
+  .state-svg {
+    width: 100%;
+    max-width: 650px;
+    height: 200px;
+  }
+  .chaotic-line {
+    fill: none;
+    stroke: var(--red);
+    stroke-width: 3;
+    stroke-dasharray: 800;
+    stroke-dashoffset: 800;
+    animation: drawLine 2s ease-in-out 0.5s forwards;
+    opacity: 0.7;
+  }
+  .stable-line {
+    fill: none;
+    stroke: var(--gold);
+    stroke-width: 3.5;
+    stroke-dasharray: 800;
+    stroke-dashoffset: 800;
+    animation: drawLine 1.5s ease-in-out 2.8s forwards;
+  }
+  .state-label-before, .state-label-after {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+  .state-label-before {
+    fill: var(--red);
+    opacity: 0;
+    animation: fadeInSVG 0.5s ease 0.3s forwards;
+  }
+  .state-label-after {
+    fill: var(--gold);
+    opacity: 0;
+    animation: fadeInSVG 0.5s ease 2.5s forwards;
+  }
+  @keyframes drawLine {
+    to { stroke-dashoffset: 0; }
+  }
+  @keyframes fadeInSVG {
+    to { opacity: 1; }
+  }
+
+  /* ========== ANIMATION: #9 Aufwand vs Output ========== */
+  .effort-scene {
+    width: 100%;
+    height: 320px;
+    background: var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+    padding: 40px;
+  }
+  .metric-block {
+    text-align: center;
+    opacity: 0;
+  }
+  .metric-block:nth-child(1) { animation: fadeIn 0.6s ease 0.8s forwards; }
+  .metric-block:nth-child(2) { animation: fadeIn 0.6s ease 1.6s forwards; }
+  .metric-label {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--gray);
+    margin-bottom: 8px;
+  }
+  .metric-arrow {
+    font-size: 64px;
+    font-weight: 800;
+    line-height: 1;
+  }
+  .metric-arrow.down { color: var(--green); }
+  .metric-arrow.up { color: var(--gold); }
+  .metric-word {
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 4px;
+  }
+  .metric-word.less { color: var(--green); }
+  .metric-word.more { color: var(--gold); }
+
+  /* ========== ANIMATION: #11 Rekord-Montag ========== */
+  .calendar-scene {
+    width: 100%;
+    height: 320px;
+    background: var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 40px;
+  }
+  .cal-day {
+    width: 100px;
+    height: 110px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    opacity: 0;
+    transform: translateY(20px);
+    border: 2px solid transparent;
+  }
+  .cal-day:nth-child(1) { animation: calSlide 0.4s ease 0.3s forwards; }
+  .cal-day:nth-child(2) { animation: calSlide 0.4s ease 0.5s forwards; }
+  .cal-day:nth-child(3) { animation: calSlide 0.4s ease 0.7s forwards; }
+  .cal-day:nth-child(4) { animation: calSlide 0.4s ease 0.9s forwards; }
+  .cal-day:nth-child(5) { animation: calSlide 0.4s ease 1.1s forwards; }
+  .cal-day .day-name {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+  }
+  .cal-day .day-icon {
+    font-size: 32px;
+    line-height: 1;
+  }
+  .cal-day.work { background: #222; }
+  .cal-day.work .day-name { color: var(--gray); }
+  .cal-day.free { background: #1a2e1a; border-color: var(--green-muted); }
+  .cal-day.free .day-name { color: var(--green); }
+  .cal-day.record {
+    background: linear-gradient(135deg, #3a2e00 0%, #1a1500 100%);
+    border-color: var(--gold);
+    animation: calSlide 0.4s ease 1.1s forwards, recordPulse 1.5s ease 2s infinite;
+  }
+  .cal-day.record .day-name { color: var(--gold); }
+  .record-badge {
+    position: absolute;
+    top: -14px;
+    font-size: 10px;
+    font-weight: 800;
+    background: var(--gold);
+    color: var(--black);
+    padding: 2px 10px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0;
+    animation: fadeIn 0.3s ease 2s forwards;
+  }
+  .cal-day.record { position: relative; }
+  @keyframes calSlide {
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes recordPulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(255,209,62,0.3); }
+    50% { box-shadow: 0 0 20px 4px rgba(255,209,62,0.15); }
+  }
+
+  /* ========== ANIMATION: #12 Startwert ========== */
+  .start-scene {
+    width: 100%;
+    height: 320px;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .start-label {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--gray);
+    opacity: 0;
+    animation: fadeIn 0.5s ease 0.5s forwards;
+    margin-bottom: 8px;
+  }
+  .start-number {
+    font-size: 64px;
+    font-weight: 800;
+    color: var(--white);
+    opacity: 0;
+    animation: fadeIn 0.8s ease 1s forwards;
+  }
+  .start-number span { color: var(--gray); font-size: 32px; font-weight: 400; }
+  .start-sub {
+    font-size: 14px;
+    color: var(--gray);
+    opacity: 0;
+    animation: fadeIn 0.5s ease 1.8s forwards;
+    margin-top: 4px;
+  }
+
+  /* ========== ANIMATION: #14 HERO Umsatz ========== */
+  .hero-scene {
+    width: 100%;
+    height: 360px;
+    background: var(--black);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-flash {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(255,209,62,0.15) 0%, transparent 70%);
+    opacity: 0;
+    animation: heroFlash 1s ease 4.5s forwards;
+  }
+  @keyframes heroFlash {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0.3; }
+  }
+  .hero-label {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--gray);
+    opacity: 0;
+    animation: fadeIn 0.5s ease 0.5s forwards;
+  }
+  .hero-counter {
+    font-size: 80px;
+    font-weight: 800;
+    color: var(--white);
+    margin: 8px 0;
+    font-variant-numeric: tabular-nums;
+  }
+  .hero-subtitle {
+    font-size: 16px;
+    color: var(--gold);
+    font-weight: 600;
+    opacity: 0;
+    animation: fadeIn 0.6s ease 5.2s forwards;
+    letter-spacing: 1px;
+  }
+
+  /* ========== ANIMATION: #15 ROI ========== */
+  .roi-scene {
+    width: 100%;
+    height: 320px;
+    background: var(--black);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .roi-label {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: var(--gray);
+    opacity: 0;
+    animation: fadeIn 0.5s ease 0.5s forwards;
+  }
+  .roi-value {
+    font-size: 120px;
+    font-weight: 900;
+    color: var(--gold);
+    line-height: 1;
+    opacity: 0;
+    transform: scale(0.5);
+    animation: roiPop 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1.2s forwards;
+  }
+  .roi-sub {
+    font-size: 16px;
+    color: var(--light-gray);
+    opacity: 0;
+    animation: fadeIn 0.5s ease 2.2s forwards;
+  }
+  @keyframes roiPop {
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  /* ========== ANIMATION: #17 Max 2.0 ========== */
+  .transform-scene {
+    width: 100%;
+    height: 320px;
+    background: var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+  }
+  .version-block {
+    text-align: center;
+    opacity: 0;
+  }
+  .version-block.old {
+    animation: fadeIn 0.6s ease 0.5s forwards;
+  }
+  .version-block.new {
+    animation: fadeIn 0.8s ease 2s forwards;
+  }
+  .version-label {
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 1.1;
+  }
+  .version-block.old .version-label {
+    color: #555;
+    text-decoration: line-through;
+    text-decoration-color: var(--red);
+    text-decoration-thickness: 3px;
+  }
+  .version-block.new .version-label {
+    color: var(--gold);
+    text-shadow: 0 0 30px rgba(255,209,62,0.3);
+  }
+  .version-desc {
+    font-size: 13px;
+    margin-top: 8px;
+    max-width: 180px;
+  }
+  .version-block.old .version-desc { color: #555; }
+  .version-block.new .version-desc { color: var(--light-gray); }
+  .transform-arrow {
+    font-size: 36px;
+    color: var(--gold);
+    opacity: 0;
+    animation: fadeIn 0.4s ease 1.5s forwards;
+  }
+
+  /* ========== ANIMATION: #18 Lifestyle Icons ========== */
+  .lifestyle-scene {
+    width: 100%;
+    height: 320px;
+    background: var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 48px;
+    padding: 40px;
+    position: relative;
+  }
+  .life-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    opacity: 0;
+  }
+  .life-icon:nth-child(1) { animation: lifeAppear 0.6s ease 0.5s forwards; }
+  .life-icon:nth-child(2) { animation: lifeAppear 0.6s ease 0.9s forwards; }
+  .life-icon:nth-child(3) { animation: lifeAppear 0.6s ease 1.3s forwards; }
+  .life-icon .icon-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    position: relative;
+    transition: all 0.8s ease;
+  }
+  /* Phase 1: Grau + Durchgestrichen */
+  .life-icon .icon-circle.off {
+    background: #1a1a1a;
+    border: 2px solid #333;
+  }
+  .life-icon .icon-circle.off::after {
+    content: '';
+    position: absolute;
+    width: 70%;
+    height: 3px;
+    background: var(--red);
+    transform: rotate(-45deg);
+  }
+  /* Phase 2: Gold + Leuchtend */
+  .life-icon .icon-circle.on {
+    background: linear-gradient(135deg, #3a2e00, #1a1500);
+    border: 2px solid var(--gold);
+    box-shadow: 0 0 20px rgba(255,209,62,0.2);
+  }
+  .life-icon .icon-label {
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .life-icon.off .icon-label { color: #444; }
+  .life-icon.on .icon-label { color: var(--gold); }
+  @keyframes lifeAppear {
+    to { opacity: 1; }
+  }
+  .life-phase-label {
+    position: absolute;
+    top: 20px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 700;
+  }
+  .life-phase-label.before-label { color: var(--red); left: 28px; }
+  .life-phase-label.after-label { color: var(--gold); left: 28px; }
+
+  /* ========== ANIMATION: #19 CTA Endcard ========== */
+  .cta-scene {
+    width: 100%;
+    height: 360px;
+    background: var(--black);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-scene::before {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(255,209,62,0.08) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .cta-logo {
+    font-size: 36px;
+    font-weight: 900;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: var(--white);
+    opacity: 0;
+    animation: fadeIn 0.8s ease 0.5s forwards;
+    position: relative;
+  }
+  .cta-tagline {
+    font-size: 14px;
+    color: var(--gray);
+    letter-spacing: 2px;
+    opacity: 0;
+    animation: fadeIn 0.6s ease 1.2s forwards;
+    position: relative;
+  }
+  .cta-button {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--black);
+    font-size: 16px;
+    font-weight: 800;
+    padding: 16px 40px;
+    border-radius: 8px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: ctaAppear 0.6s ease 1.8s forwards;
+    position: relative;
+    text-decoration: none;
+  }
+  .cta-url {
+    font-size: 14px;
+    color: var(--gold);
+    font-weight: 600;
+    opacity: 0;
+    animation: fadeIn 0.5s ease 2.4s forwards;
+    position: relative;
+  }
+  @keyframes ctaAppear {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ========== SHARED ========== */
+  @keyframes fadeIn {
+    to { opacity: 1; }
+  }
+
+  /* ========== REPLAY BUTTON ========== */
+  .replay-btn {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid #333;
+    color: var(--gray);
+    font-size: 11px;
+    padding: 5px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    z-index: 10;
+    transition: all 0.2s;
+  }
+  .replay-btn:hover {
+    background: rgba(255,209,62,0.1);
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <h1>UMSETZER</h1>
+  <p>Animations-Vorlagen &middot; Video-Testimonial Max Nollte &middot; Nur Priorit&auml;t &bdquo;Hoch&ldquo;</p>
+</div>
+
+<div class="container">
+
+  <div class="intro">
+    <h2>12 Animations-Mockups f&uuml;r den Motion Designer</h2>
+    <p>Jede Animation zeigt eine grobe Vorschau im umsetzer-Branding (schwarz/gold). Die Vorlagen sind bewusst simpel gehalten &ndash; sie zeigen Timing, Farbgebung und Konzept, nicht das finale Design.</p>
+    <div class="hint">Jede Animation spielt automatisch ab &middot; Klick auf &bdquo;Replay&ldquo; zum Wiederholen</div>
+  </div>
+
+  <!-- ===== #1 BAUCHBINDE ===== -->
+  <div class="anim-card">
+    <div class="anim-header">
+      <div class="anim-number">1</div>
+      <div class="anim-title-block">
+        <h3>Bauchbinde / Lower Third</h3>
+        <span class="tc">TC 1:00:00</span>
+      </div>
+    </div>
+    <div class="anim-preview" id="scene-1">
+      <button class="replay-btn" onclick="replay('scene-1')">&#8635; Replay</button>
+      <div class="lower-third-scene">
+        <div class="person-placeholder"></div>
+        <div class="lower-third-bar">
+          <div class="lt-gold">
+            <span class="lt-name">MAX NOLLTE</span>
+          </div>
+          <div class="lt-black">
+            <span class="lt-role">Gr&uuml;nder &amp; Gesch&auml;ftsf&uuml;hrer</span>
+            <span class="lt-company">Sanul Media GmbH</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="anim-briefing">
+      <div class="quote">&bdquo;Mein Name ist Max Nollte, ich bin der Gr&uuml;nder und Gesch&auml;ftsf&uuml;hrer der Sanul Media GmbH.&ldquo;</div>
+      <div class="brief-label">Briefing</div>
+      <div class="brief-text">Name, Titel und Firma als klassische Bauchbinde. F&auml;hrt von links ins Bild. Goldener Block f&uuml;r den Namen, schwarzer Block mit goldener Outline f&uuml;r Rolle und Firma. Nie das Gesicht verdecken &ndash; unteres Drittel des Bildes.</div>
+      <div class="specs">
+        <span class="spec"><strong>Dauer:</strong> 4&ndash;5 Sek.</span>
+        <span class="spec"><strong>Easing:</strong> Ease-out slide</span>
+        <span class="spec"><strong>Position:</strong> Unteres Drittel links</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== #3 ZEITLEISTE ===== -->
+  <div class="anim-card">
+    <div class="anim-header">
+      <div class="anim-number">3</div>
+      <div class="anim-title-block">
+        <h3>Zeitleiste / Uhr-Animation</h3>
+        <span class="tc">TC 1:00:46</span>
+      </div>
+    </div>
+    <div class="anim-preview" id="scene-3">
+      <button class="replay-btn" onclick="replay('scene-3')">&#8635; Replay</button>
+      <div class="timeline-scene">
+        <div class="tl-label-row">
+          <span class="start">05:00</span>
+          <span class="end">22:00</span>
+        </div>
+        <div class="timeline-track">
+          <div class="timeline-fill"></div>
+        </div>
+        <div class="tl-hours">17h <span>Arbeitstag</span></div>
+        <div class="tl-sub">7 Tage die Woche</div>
+      </div>
+    </div>
+    <div class="anim-briefing">
+      <div class="quote">&bdquo;B&uuml;roarbeitszeit von manchmal 5 Uhr morgens bis 22 Uhr abends war v&ouml;llig normal, das gleichzeitig dann auch noch am Sonntag.&ldquo;</div>
+      <div class="brief-label">Briefing</div>
+      <div class="brief-text">Horizontaler Fortschrittsbalken, der sich langsam f&uuml;llt &ndash; Farbe wechselt von Gold zu Rot je voller er wird. Verdeutlicht den extremen Arbeitstag. Am Ende erscheint &bdquo;17h&ldquo; als gro&szlig;e Zahl.</div>
+      <div class="specs">
+        <span class="spec"><strong>Dauer:</strong> 4&ndash;5 Sek.</span>
+        <span class="spec"><strong>Stil:</strong> Fortschrittsbalken, Gold &rarr; Rot</span>
+        <span class="spec"><strong>Position:</strong> Hintergrund / Overlay</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== #5 VORHER/NACHHER ===== -->
+  <div class="anim-card">
+    <div class="anim-header">
+      <div class="anim-number">5</div>
+      <div class="anim-title-block">
+        <h3>Vorher / Nachher Balkendiagramm</h3>
+        <span class="tc">TC 1:02:15</span>
+      </div>
+    </div>
+    <div class="anim-preview" id="scene-5">
+      <button class="replay-btn" onclick="replay('scene-5')">&#8635; Replay</button>
+      <div class="bars-scene">
+        <div class="bar-group bar-vorher">
+          <div class="bar-label" style="color:var(--gray)">Vorher</div>
+          <div class="bar-wrapper">
+            <div class="bar hours-bar"><span class="bar-value" style="color:#888">Viele Stunden</span></div>
+          </div>
+          <div class="bar-wrapper">
+            <div class="bar output-bar"><span class="bar-value" style="color:var(--red-muted)">Output</span></div>
+          </div>
+        </div>
+        <div class="bar-group bar-nachher">
+          <div class="bar-label" style="color:var(--gold)">Nachher</div>
+          <div class="bar-wrapper">
+            <div class="bar hours-bar"><span class="bar-value" style="color:var(--gold-dark)">Weniger Std.</span></div>
+          </div>
+          <div class="bar-wrapper">
+            <div class="bar output-bar"><span class="bar-value" style="color:var(--gold)">Mehr Output</span></div>
+          </div>
+        </div>
+        <div class="bars-legend">
+          <span><span class="dot" style="background:#555"></span> Arbeitsstunden</span>
+          <span><span class="dot" style="background:var(--gold)"></span> Output / Ergebnis</span>
+        </div>
+      </div>
+    </div>
+    <div class="anim-briefing">
+      <div class="quote">&bdquo;Hey es gibt eine Mittagspause... wir haben trotzdem den gleichen Workload rausgehauen wie vorher auch, aber es war deutlich entspannter.&ldquo;</div>
+      <div class="brief-label">Briefing</div>
+      <div class="brief-text">Zwei Balkengruppen: &bdquo;Vorher&ldquo; zeigt viele Stunden (grauer hoher Balken) aber mittleren Output (roter Balken). &bdquo;Nachher&ldquo; zeigt weniger Stunden (goldener kurzer Balken) aber h&ouml;heren Output (goldener hoher Balken). Balken wachsen nacheinander von unten hoch.</div>
+      <div class="specs">
+        <span class="spec"><strong>Dauer:</strong> 4&ndash;5 Sek.</span>
+        <span class="spec"><strong>Stil:</strong> Clean Balkendiagramm</span>
+        <span class="spec"><strong>Position:</strong> Neben/hinter der Person</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== #7 STATE MANAGEMENT ===== -->
+  <div class="anim-card">
+    <div class="anim-header">
+      <div class="anim-number">7</div>
+      <div class="anim-title-block">
+        <h3>State Management &ndash; Stabile Linie</h3>
+        <span class="tc">TC 1:03:49</span>
+      </div>
+    </div>
+    <div class="anim-preview" id="scene-7">
+      <button class="replay-btn" onclick="replay('scene-7')">&#8635; Replay</button>
+      <div class="state-scene">
+        <svg class="state-svg" viewBox="0 0 650 200">
+          <text class="state-label-before" x="10" y="25">VORHER: SCHWANKUNGEN</text>
+          <text class="state-label-after" x="10" y="195">NACHHER: STABILE PERFORMANCE</text>
+          <polyline class="chaotic-line" points="10,80 40,30 70,120 100,20 130,110 160,50 190,130 220,40 250,100 280,25 310,115 340,45 370,125 400,35 430,90 460,55 490,110 520,30 550,95 580,50 610,80 640,60"/>
+          <line class="stable-line" x1="10" y1="160" x2="640" y2="160"/>
+        </svg>
+      </div>
+    </div>
+    <div class="anim-briefing">
+      <div class="quote">&bdquo;State Management... mittlerweile jeder Tag grunds&auml;tzlich immer gut ist. Man wei&szlig; ganz genau, wie man ein Werkzeug aus dem Werkzeugkasten rausholt.&ldquo;</div>
+      <div class="brief-label">Briefing</div>
+      <div class="brief-text">Erst zeichnet sich eine wilde, zackige rote Linie (Emotionsschwankungen). Dann erscheint darunter eine goldene, stabile gerade Linie (State Management). Kontrast zwischen Chaos und Kontrolle. Die rote Linie kann leicht verblassen, w&auml;hrend die goldene leuchtet.</div>
+      <div class="specs">
+        <span class="spec"><strong>Dauer:</strong> 5 Sek.</span>
+        <span class="spec"><strong>Stil:</strong> Line-Draw-Animation</span>
+        <span class="spec"><strong>Position:</strong> Hintergrund-Overlay</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== #9 AUFWAND VS OUTPUT ===== -->
+  <div class="anim-card">
+    <div class="anim-header">
+      <div class="anim-number">9</div>
+      <div class="anim-title-block">
+        <h3>Aufwand vs. Output</h3>
+        <span class="tc">TC 1:05:05</span>
+      </div>
+    </div>
+    <div class="anim-preview" id="scene-9">
+      <button class="replay-btn" onclick="replay('scene-9')">&#8635; Replay</button>
+      <div class="effort-scene">
+        <div class="metric-block">
+          <div class="metric-label">Aufwand</div>
+          <div class="metric-arrow down">&darr;</div>
+          <div class="metric-word less">Weniger</div>
+        </div>
+        <div class="metric-block">
+          <div class="metric-label">Output</div>
+          <div class="metric-arrow up">&uarr;</div>
+          <div class="metric-word more">Mehr</div>
+        </div>
+      </div>
+    </div>
+    <div class="anim-briefing">
+      <div class="quote">&bdquo;Ich kann sogar weniger machen als vorher und habe den gleichen Output oder sogar teilweise noch mehr.&ldquo;</div>
+      <div class="brief-label">Briefing</div>
+      <div class="brief-text">Zwei gro&szlig;e Kennzahlen: Links &bdquo;Aufwand&ldquo; mit einem Pfeil nach unten (gr&uuml;n), rechts &bdquo;Output&ldquo; mit einem Pfeil nach hoch (gold). Erscheinen nacheinander mit leichtem Delay. Simpel und wirkungsvoll.</div>
+      <div class="specs">
+        <span class="spec"><strong>Dauer:</strong> 3&ndash;4 Sek.</span>
+        <span class="spec"><strong>Stil:</strong> Gro&szlig;e Typo, Pfeile</span>
+        <span class="spec"><strong>Position:</strong> Seitlich neben der Person</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== #11 REKORD-MONTAG ===== -->
+  <div class="anim-card">
+    <div class="anim-header">
+      <div class="anim-number">11</div>
+      <div class="anim-title-block">
+        <h3>Kalender + Rekord-Stempel</h3>
+        <span class="tc">TC 1:07:10</span>
+      </div>
+    </div>
+    <div class="anim-preview" id="scene-11">
+      <button class="replay-btn" onclick="replay('scene-11')">&#8635; Replay</button>
+      <div class="calendar-scene">
+        <div class="cal-day work">
+          <span class="day-name">Do</span>
+          <span class="day-icon" style="opacity:0.3">&#128188;</span>
+        </div>
+        <div class="cal-day work">
+          <span class="day-name">Fr</span>
+          <span class="day-icon" style="opacity:0.3">&#128188;</span>
+        </div>
+        <div class="cal-day free">
+          <span class="day-name">Sa</span>
+          <span class="day-icon">&#127796;</span>
+        </div>
+        <div class="cal-day free">
+          <span class="day-name">So</span>
+          <span class="day-icon">&#127796;</span>
+        </div>
+        <div class="cal-day record">
+          <span class="record-badge">REKORD!</span>
+          <span class="day-name">Mo</span>
+          <span class="day-icon">&#9889;</span>
+        </div>
+      </div>
+    </div>
+    <div class="anim-briefing">
+      <div class="quote">&bdquo;An diesem Wochenende mache ich einfach nichts, fahre ganz normal Montag in die Firma und hatte auch direkt einen Rekordmontag.&ldquo;</div>
+      <div class="brief-label">Briefing</div>
+      <div class="brief-text">F&uuml;nf Tages-Karten sliden nacheinander rein: Do/Fr (grau, Arbeitstage), Sa/So (gr&uuml;n, frei), Montag (gold, pulsierend). Auf dem Montag erscheint ein &bdquo;REKORD!&ldquo;-Badge. Emotional starker Moment &ndash; darf ruhig etwas l&auml;nger stehen bleiben.</div>
+      <div class="specs">
+        <span class="spec"><strong>Dauer:</strong> 4&ndash;5 Sek.</span>
+        <span class="spec"><strong>Stil:</strong> Karten-Animation</span>
+        <span class="spec"><strong>Position:</strong> Neben der Person</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== #12 STARTWERT ===== -->
+  <div class="anim-card">
+    <div class="anim-header">
+      <div class="anim-number">12</div>
+      <div class="anim-title-block">
+        <h3>Startwert einblenden</h3>
+        <span class="tc">TC 1:07:27</span>
+      </div>
+    </div>
+    <div class="anim-preview" id="scene-12">
+      <button class="replay-btn" onclick="replay('scene-12')">&#8635; Replay</button>
+      <div class="start-scene">
+        <div class="start-label">Monatsumsatz beim Start</div>
+        <div class="start-number">~34.000 <span>&euro;</span></div>
+        <div class="start-sub">Vor der Zusammenarbeit mit Basti</div>
+      </div>
+    </div>
+    <div class="anim-briefing">
+      <div class="quote">&bdquo;Ich war damals bei Monatsumsatz, ich glaube bei 33.000, 34.000 Euro.&ldquo;</div>
+      <div class="brief-label">Briefing</div>
+      <div class="brief-text">Dezente Einblendung der Startzahl im Hintergrund. Erst Label, dann Zahl, dann Untertitel. Wei&szlig; auf dunkel. Bereitet den Boden f&uuml;r den Hero-Moment (#14) &ndash; der Zuschauer merkt sich diese Zahl unbewusst.</div>
+      <div class="specs">
+        <span class="spec"><strong>Dauer:</strong> 3&ndash;4 Sek.</span>
+        <span class="spec"><strong>Stil:</strong> Dezentes Fade-in</span>
+        <span class="spec"><strong>Position:</strong> Hintergrund hinter der Person</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== #14 HERO UMSATZ ===== -->
+  <div class="anim-card" style="border-color: var(--gold);">
+    <div class="anim-header" style="background: linear-gradient(90deg, #2a2000, var(--dark));">
+      <div class="anim-number" style="width:42px;height:42px;font-size:16px;">14</div>
+      <div class="anim-title-block">
+        <h3 style="color:var(--gold);">Hero-Moment: Umsatz-Counter</h3>
+        <span class="tc">TC 1:09:32 &mdash; WICHTIGSTE ANIMATION</span>
+      </div>
+    </div>
+    <div class="anim-preview" id="scene-14" style="min-height:360px;">
+      <button class="replay-btn" onclick="replay('scene-14')">&#8635; Replay</button>
+      <div class="hero-scene">
+        <div class="hero-flash"></div>
+        <div class="hero-label">Monatsumsatz</div>
+        <div class="hero-counter" id="hero-counter">34.000 &euro;</div>
+        <div class="hero-subtitle">Weniger Arbeit. Mehr Spa&szlig;.</div>
+      </div>
+    </div>
+    <div class="anim-briefing">
+      <div class="quote">&bdquo;Mit Basti bin ich bei roundabout 33.000, 34.000 Euro Monatsumsatz gestartet und wir sind dann recht schnell auf einen sechsstelligen Monatsumsatz gekommen. Das mit weniger Arbeiten, aber mehr Spa&szlig;.&ldquo;</div>
+      <div class="brief-label">Briefing</div>
+      <div class="brief-text">DER Hero-Moment des gesamten Videos! Die Zahl &bdquo;34.000 &euro;&ldquo; z&auml;hlt animiert hoch bis &bdquo;100.000+ &euro;&ldquo;. Beim Erreichen der 100k: goldener Flash-Effekt im Hintergrund. Dann erscheint der Claim &bdquo;Weniger Arbeit. Mehr Spa&szlig;.&ldquo; als Unterzeile. Dieser Moment muss sitzen &ndash; ggf. auch Soundeffekt einplanen.</div>
+      <div class="specs">
+        <span class="spec"><strong>Dauer:</strong> 6&ndash;8 Sek.</span>
+        <span class="spec"><strong>Stil:</strong> Counter + Flash</span>
+        <span class="spec"><strong>Position:</strong> Vollbild-Overlay oder gro&szlig; im Hintergrund</span>
+        <span class="spec"><strong>Sound:</strong> Ggf. subtiler Woosh/Impact</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== #15 ROI ===== -->
+  <div class="anim-card">
+    <div class="anim-header">
+      <div class="anim-number">15</div>
+      <div class="anim-title-block">
+        <h3>ROI Multiplikator</h3>
+        <span class="tc">TC 1:10:03</span>
+      </div>
+    </div>
+    <div class="anim-preview" id="scene-15">
+      <button class="replay-btn" onclick="replay('scene-15')">&#8635; Replay</button>
+      <div class="roi-scene">
+        <div class="roi-label">Return on Invest</div>
+        <div class="roi-value">10x+</div>
+        <div class="roi-sub">&bdquo;...weil du wirst immer besser.&ldquo;</div>
+      </div>
+    </div>
+    <div class="anim-briefing">
+      <div class="quote">&bdquo;Den Return on Invest w&uuml;rde ich zehnmal oder mehr beschreiben, weil am Ende du nicht an einer Zahl schraubst, sondern an dir selber.&ldquo;</div>
+      <div class="brief-label">Briefing</div>
+      <div class="brief-text">Die &bdquo;10x+&ldquo; poppt gro&szlig; und gold rein (Scale-Up mit Overshoot-Easing). Darunter das Zitat als Unterzeile. Kurz, knackig, wirkungsvoll. Kommt direkt nach dem Hero-Moment &ndash; verst&auml;rkt den Wow-Effekt.</div>
+      <div class="specs">
+        <span class="spec"><strong>Dauer:</strong> 3&ndash;4 Sek.</span>
+        <span class="spec"><strong>Stil:</strong> Scale-Pop mit Overshoot</span>
+        <span class="spec"><strong>Position:</strong> Zentral oder seitlich</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== #17 MAX 2.0 ===== -->
+  <div class="anim-card">
+    <div class="anim-header">
+      <div class="anim-number">17</div>
+      <div class="anim-title-block">
+        <h3>Max 1.0 &rarr; Max 2.0 Transformation</h3>
+        <span class="tc">TC 1:10:46</span>
+      </div>
+    </div>
+    <div class="anim-preview" id="scene-17">
+      <button class="replay-btn" onclick="replay('scene-17')">&#8635; Replay</button>
+      <div class="transform-scene">
+        <div class="version-block old">
+          <div class="version-label">Max 1.0</div>
+          <div class="version-desc">Verbissen, &uuml;berarbeitet, kopf durch die Wand</div>
+        </div>
+        <div class="transform-arrow">&rarr;</div>
+        <div class="version-block new">
+          <div class="version-label">Max 2.0</div>
+          <div class="version-desc">Gelassen, strukturiert, mehr Spa&szlig;, gleiche Ziele</div>
+        </div>
+      </div>
+    </div>
+    <div class="anim-briefing">
+      <div class="quote">&bdquo;Meine fr&uuml;here Version, die gestorben ist, war ein verbissener Typ... jetzt ist Max 2.0 da, die jetzt einfach gelassener an die Sache rangeht.&ldquo;</div>
+      <div class="brief-label">Briefing</div>
+      <div class="brief-text">Erst erscheint &bdquo;Max 1.0&ldquo; in Grau mit rotem Durchstreichen, dann Pfeil, dann &bdquo;Max 2.0&ldquo; in leuchtendem Gold mit Glow-Effekt. Fasst die gesamte Transformation des Videos in einem Bild zusammen. Emotional starker Moment.</div>
+      <div class="specs">
+        <span class="spec"><strong>Dauer:</strong> 4&ndash;5 Sek.</span>
+        <span class="spec"><strong>Stil:</strong> Text-Transformation</span>
+        <span class="spec"><strong>Position:</strong> Seitlich oder Hintergrund</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== #18 LIFESTYLE ICONS (VORHER) ===== -->
+  <div class="anim-card">
+    <div class="anim-header">
+      <div class="anim-number">18</div>
+      <div class="anim-title-block">
+        <h3>Lifestyle-Icons &ndash; Callback</h3>
+        <span class="tc">TC 1:11:12</span>
+      </div>
+    </div>
+    <div class="anim-preview" id="scene-18">
+      <button class="replay-btn" onclick="replay('scene-18')">&#8635; Replay</button>
+      <!-- Phase 1: OFF -->
+      <div class="lifestyle-scene" id="life-phase-1">
+        <div class="life-phase-label before-label">VORHER (CALLBACK ZU #4)</div>
+        <div class="life-icon off">
+          <div class="icon-circle off">&#127939;</div>
+          <span class="icon-label">Sport</span>
+        </div>
+        <div class="life-icon off">
+          <div class="icon-circle off">&#128106;</div>
+          <span class="icon-label">Familie</span>
+        </div>
+        <div class="life-icon off">
+          <div class="icon-circle off">&#127796;</div>
+          <span class="icon-label">Freizeit</span>
+        </div>
+      </div>
+    </div>
+    <div class="anim-briefing">
+      <div class="quote">&bdquo;Zeit f&uuml;r Sport, Zeit f&uuml;r meine Familie, f&uuml;r Privatleben. Und das ist halt mega.&ldquo;</div>
+      <div class="brief-label">Briefing</div>
+      <div class="brief-text">Zwei Phasen: Erst erscheinen die gleichen Icons wie bei Animation #4 (Sport, Familie, Freizeit) in Grau mit rotem Durchstreichen. Nach 2 Sek. morphen sie zu goldenen, leuchtenden Icons &ndash; ohne Durchstreichung, mit Gold-Glow. Visueller Callback, der die Transformation emotional abschlie&szlig;t. Klick &bdquo;Replay&ldquo;, um beide Phasen zu sehen.</div>
+      <div class="specs">
+        <span class="spec"><strong>Dauer:</strong> 5 Sek. (2s off + 3s on)</span>
+        <span class="spec"><strong>Stil:</strong> Morph / Transition</span>
+        <span class="spec"><strong>Callback:</strong> Zu Animation #4</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== #19 CTA ENDCARD ===== -->
+  <div class="anim-card">
+    <div class="anim-header">
+      <div class="anim-number">19</div>
+      <div class="anim-title-block">
+        <h3>Call-to-Action / Endcard</h3>
+        <span class="tc">TC 1:11:56</span>
+      </div>
+    </div>
+    <div class="anim-preview" id="scene-19">
+      <button class="replay-btn" onclick="replay('scene-19')">&#8635; Replay</button>
+      <div class="cta-scene">
+        <div class="cta-logo">UMSETZER</div>
+        <div class="cta-tagline">Entfalte deine Identit&auml;t. Erreiche deine Ziele.</div>
+        <div class="cta-button">Erstgespr&auml;ch buchen</div>
+        <div class="cta-url">www.umsetzer.de</div>
+      </div>
+    </div>
+    <div class="anim-briefing">
+      <div class="quote">&bdquo;Buch dir einfach mal ein Erstgespr&auml;ch. Basti bei&szlig;t nicht, er wird genau analysieren, wo es gerade bei dir liegt.&ldquo;</div>
+      <div class="brief-label">Briefing</div>
+      <div class="brief-text">Endcard-Screen im vollen umsetzer-Branding. Logo &rarr; Tagline &rarr; CTA-Button &rarr; URL erscheinen nacheinander. Subtiler goldener Radial-Glow im Hintergrund. Optional: QR-Code f&uuml;r mobiles Buchen. Bleibt 5&ndash;8 Sek. stehen als Abschluss.</div>
+      <div class="specs">
+        <span class="spec"><strong>Dauer:</strong> 5&ndash;8 Sek.</span>
+        <span class="spec"><strong>Stil:</strong> Sequenzielles Fade-in</span>
+        <span class="spec"><strong>Position:</strong> Vollbild / Endcard</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// ===== REPLAY FUNCTION =====
+function replay(sceneId) {
+  const scene = document.getElementById(sceneId);
+  const parent = scene.parentElement;
+  const clone = scene.cloneNode(true);
+  clone.id = sceneId;
+  parent.replaceChild(clone, scene);
+
+  // Re-attach counter animation for hero scene
+  if (sceneId === 'scene-14') {
+    setTimeout(() => startHeroCounter(), 800);
+  }
+  // Re-attach lifestyle transition
+  if (sceneId === 'scene-18') {
+    setTimeout(() => startLifestyleTransition(), 100);
+  }
+}
+
+// ===== HERO COUNTER =====
+function startHeroCounter() {
+  const counter = document.getElementById('hero-counter');
+  if (!counter) return;
+
+  const start = 34000;
+  const end = 100000;
+  const duration = 3500;
+  const startTime = performance.now();
+
+  function easeOutExpo(t) {
+    return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
+  }
+
+  function update(now) {
+    const elapsed = now - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const eased = easeOutExpo(progress);
+    const current = Math.round(start + (end - start) * eased);
+    const formatted = current.toLocaleString('de-DE');
+
+    if (progress >= 1) {
+      counter.innerHTML = '100.000+ \u20ac';
+      counter.style.color = '#FFD13E';
+      counter.style.textShadow = '0 0 40px rgba(255,209,62,0.4)';
+      return;
+    }
+
+    counter.innerHTML = formatted + ' \u20ac';
+
+    if (progress > 0.7) {
+      const glow = (progress - 0.7) / 0.3;
+      counter.style.color = `rgb(${255}, ${Math.round(255 - (255-209)*glow)}, ${Math.round(255 - (255-62)*glow)})`;
+    }
+
+    requestAnimationFrame(update);
+  }
+
+  setTimeout(() => requestAnimationFrame(update), 800);
+}
+
+// ===== LIFESTYLE TRANSITION =====
+function startLifestyleTransition() {
+  const phase1 = document.getElementById('life-phase-1');
+  if (!phase1) return;
+
+  setTimeout(() => {
+    const icons = phase1.querySelectorAll('.life-icon');
+    const label = phase1.querySelector('.life-phase-label');
+
+    icons.forEach((icon, i) => {
+      setTimeout(() => {
+        icon.classList.remove('off');
+        icon.classList.add('on');
+        const circle = icon.querySelector('.icon-circle');
+        circle.classList.remove('off');
+        circle.classList.add('on');
+        const iconLabel = icon.querySelector('.icon-label');
+        iconLabel.style.color = '#FFD13E';
+      }, i * 300);
+    });
+
+    label.classList.remove('before-label');
+    label.classList.add('after-label');
+    label.textContent = 'NACHHER \u2013 ALLES ZUR\u00dcCK!';
+  }, 2500);
+}
+
+// ===== INIT =====
+// Start hero counter when it scrolls into view
+const heroObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      startHeroCounter();
+      heroObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.5 });
+
+const heroScene = document.getElementById('scene-14');
+if (heroScene) heroObserver.observe(heroScene);
+
+// Start lifestyle transition when visible
+const lifeObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      startLifestyleTransition();
+      lifeObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.5 });
+
+const lifeScene = document.getElementById('scene-18');
+if (lifeScene) lifeObserver.observe(lifeScene);
+</script>
+
+</body>
+</html>
